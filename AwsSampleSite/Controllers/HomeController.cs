@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,6 +11,9 @@ namespace AwsSampleSite.Controllers
     {
         public ActionResult Index()
         {
+
+            var env = ConfigurationManager.AppSettings["EnvironmentName"];
+            ViewBag.env = env;
             return View();
         }
 
